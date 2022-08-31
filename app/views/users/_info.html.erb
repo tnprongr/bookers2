@@ -1,0 +1,17 @@
+<h1>User info</h1>
+
+<%= form_with model: @user, url:'/users' do |f| %>
+
+  <p class="border-bottom"><%= f.file_field :image, accept: "image/*" %></p>
+
+  <p class="border-bottom">name <%= post_image.user.name %></p>
+  
+  <p>introduction  <%= post_image.user.name %></p>
+  
+  <button type="button" class="btn btn-outline-secondary">
+   <%= link_to(edit_user_path) do %>
+    <i class="fa-solid fa-user-gear"></i>
+   <% end %>
+  </button>
+  
+<% end %>
