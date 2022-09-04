@@ -1,17 +1,37 @@
-<h1>User info</h1>
+<h2>User info</h2>
 
 <%= form_with model: @user, url:'/users' do |f| %>
 
-  <p class="border-bottom"></p>
-  
-  <p class="border-bottom">name </p>
-  
-  <p>introduction  </p>
-  
+  <p class="border-bottom">
+   <%= image_tag 'no_image', size:"100×100" %>
+  </p>
+
+  <p class="border-bottom"><strong>name  <%= current_user.name %></strong></p>
+
+  <p><strong>introduction  <%= current_user.introduction %></strong></p>
+
   <button type="button" class="btn btn-outline-secondary">
-   <%= link_to(edit_user_path) do %>
+   <%= link_to(edit_user_path(current_user.id)) do %>
     <i class="fa-solid fa-user-gear"></i>
    <% end %>
   </button>
-  
+
+<% end %>
+
+<h2>New Book</h2>
+
+<%= form_with model: @book do |f| %>
+
+  <p>Title</p>
+  <%= f.text_field :title %>
+
+  <p>Opinion</p>
+  <%= f.text_area :body %>
+
+  <p>
+   <button type="submit" class="btn btn-success">
+    Create Book
+   </button>
+  </p>
+
 <% end %>
