@@ -1,12 +1,24 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
+i {
+  font-family: "Font Awesome 5 free";
+  font-weight: 900;
+  font-style: normal;
+}
+
 li {
   list-style-type: none;
   text-decoration: none;
-  color: white ; 
 }
 
+.link {
+  color: white;
+}
+
+.nav-item {
+  padding: 5px;
+}
 
 header {
   width: auto;
