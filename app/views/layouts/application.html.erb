@@ -13,68 +13,66 @@
   </head>
 
   <body>
-
-   <header class="bg-dark">
     
-   <nav class="navbar navbar-expand-lg navbar-light">
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-10 px-20 ">
     <div class="container">
-     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-     </button>
-     
-      <a href="https://1fb350eda819408dba227a55150f5b40.vfs.cloud9.ap-northeast-1.amazonaws.com/">
-     <h5 class="link">Bookers</h5>
-     </a> 
-     
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <a href="/">
+       <h5 class="link">Bookers</h5>
+      </a> 
+      
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav ml-auto">
      <% if user_signed_in? %>
-      <li class="nav-item">
-      <%= link_to root_path, class: 'link' do %>
-       <i class="fa-duotone fa-house-chimney"></i>Home
-      <% end %>
-      </li>
-      <li class="nav-item">
-      <%= link_to users_path(current_user.id), class:'link' do %>
-       <i class="fa-duotone fa-users"></i>Users
-      <% end %>
-      </li>
-      <li class="nav-item">
-      <%= link_to books_path(current_user.id), class:'link' do %>
-      <i class="fa-solid fa-book-open"></i>Books
-      <% end %>
-      </li>
-      <li class="nav-item">
-        <%= link_to destroy_user_session_path, method: :delete, class:'link' do %>
-        <i class="fa-solid fa-right-from-bracket"></i>Log out
+       <li class="nav-item">
+        <%= link_to root_path, class: 'link' do %>
+         <i class="fa-duotone fa-house-chimney"></i>Home
         <% end %>
-      </li>
+       </li>
+       <li class="nav-item">
+        <%= link_to users_path(current_user.id), class:'link' do %>
+         <i class="fa-duotone fa-users"></i>Users
+        <% end %>
+       </li>
+       <li class="nav-item">
+        <%= link_to books_path(current_user.id), class:'link' do %>
+         <i class="fa-solid fa-book-open"></i>Books
+        <% end %>
+       </li>
+       <li class="nav-item">
+        <%= link_to destroy_user_session_path, method: :delete, class:'link' do %>
+         <i class="fa-solid fa-right-from-bracket"></i>Log out
+        <% end %>
+       </li>
      <% else %>
-      <li class="nav-item">
-       <%= link_to root_path, class:'link' do %>
-        <i class="fa-duotone fa-house-chimney"></i>Home
-       <% end %>
-      </li>
-      <li class="nav-item">
-       <%= link_to about_path, class:'link' do %>
-        <i class="fa-solid fa-link"></i>About
-       <% end %>
-      </li>
-      <li class="nav-item">
-       <%= link_to new_user_registration_path, class:'link' do %>
-        <i class="fa-solid fa-user-plus"></i>Sign up
-       <% end %>
-      </li>
-      <li class="nav-item">
-       <%= link_to new_user_session_path, class:'link' do %>
-        <i class="fa-solid fa-right-to-bracket"></i>Log in
-       <% end %>
-      </li>
+       <li class="nav-item">
+        <%= link_to root_path, class:'link' do %>
+         <i class="fa-duotone fa-house-chimney"></i>Home
+        <% end %>
+       </li>
+       <li class="nav-item">
+        <%= link_to about_path, class:'link' do %>
+         <i class="fa-solid fa-link"></i>About
+        <% end %>
+       </li>
+       <li class="nav-item">
+        <%= link_to new_user_registration_path, class:'link' do %>
+         <i class="fa-solid fa-user-plus"></i>Sign up
+        <% end %>
+       </li>
+       <li class="nav-item">
+        <%= link_to new_user_session_path, class:'link' do %>
+         <i class="fa-solid fa-right-to-bracket"></i>Log in
+        <% end %>
+       </li>
      <% end %>
-   </ul>
-   </div>
+     </ul>
+    </div>
+    </div>
    </nav>
-   </header>
 
    <%= yield %>
 
