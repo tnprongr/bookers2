@@ -3,7 +3,7 @@
 <%= form_with model: @user, url:'/users' do |f| %>
 
   <p class="border-bottom">
-     <%= image_tag 'no_image', size:"100×100" %>
+    <%= image_tag 'no_image', size:"100×100" %>
   </p>
 
   <p class="border-bottom"><strong>name  <%= current_user.name %></strong></p>
@@ -30,7 +30,9 @@
 
   <p>
    <button type="submit" class="btn btn-success">
+   <%= link_to (edit_user_path(current_user.id)) do %>
     Create Book
+   <% end %>
    </button>
   </p>
 
